@@ -16,4 +16,4 @@ systemctl enable backend
 systemctl start backend
 
 dnf install mysql -y
-mysql -h 172.31.89.144 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.rdevopsb72.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
