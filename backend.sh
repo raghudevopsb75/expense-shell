@@ -47,5 +47,5 @@ dnf install mysql -y &>>$log_file
 stat_check
 
 echo Load Schema
-mysql -h mysql.rdevopsb72.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql -h mysql.rdevopsb73.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
 stat_check
