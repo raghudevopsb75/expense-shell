@@ -22,7 +22,7 @@ stat_check
 
 echo Clean App Content
 rm -rf /app &>>$log_file
-echo $?
+stat_check
 
 mkdir /app
 cd /app
@@ -31,18 +31,18 @@ download_and_extract
 
 echo Download Dependencies
 npm install &>>$log_file
-echo $?
+stat_check
 
 echo Start Backend Service
 systemctl daemon-reload &>>$log_file
 systemctl enable backend &>>$log_file
 systemctl restart backend &>>$log_file
-echo $?
+stat_check
 
 echo Install MySQL Client
 dnf install mysql -y &>>$log_file
-echo $?
+stat_check
 
 echo Load Schema
 mysql -h mysql.rdevopsb72.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
-echo $?
+stat_check
